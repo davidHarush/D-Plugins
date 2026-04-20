@@ -1,0 +1,13 @@
+<ivy-module version="2.0">
+  <info organisation="bundledPlugin" module="com.android.tools.idea.smali" revision="AI-242.21829.142.2421.12409432" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="smali" ext="jar" conf="default" url="plugins/smali/lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledPlugin" name="com.intellij" rev="AI-242.21829.142.2421.12409432" />
+    <dependency org="bundledPlugin" name="com.intellij.java" rev="AI-242.21829.142.2421.12409432" />
+  </dependencies>
+</ivy-module>

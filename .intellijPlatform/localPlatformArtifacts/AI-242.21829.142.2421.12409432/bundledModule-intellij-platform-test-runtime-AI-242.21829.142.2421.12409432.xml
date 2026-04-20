@@ -1,0 +1,58 @@
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij-platform-test-runtime" revision="AI-242.21829.142.2421.12409432" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="app" ext="jar" conf="default" url="lib" />
+    <artifact name="intellij.platform.lvcs.impl" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.images.copyright" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.clouds" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.settings.local" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.navbar.monolith" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.execution.dashboard" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.coverage" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.coverage.agent" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.navbar" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.vcs.dvcs.impl" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.images.backend.svg" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.navbar.backend" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.execution.serviceView" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.kernel" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.collaborationTools" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.smart.update" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.libraries.grpc" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.libraries.grpc.netty.shaded" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.libraries.ktor.client" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.vcs.log.impl" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.smRunner.vcs" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.navbar.frontend" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.vcs.impl" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.platform.kernel.backend" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="intellij.libraries.microba" ext="jar" conf="default" url="lib/modules" />
+    <artifact name="util_rt" ext="jar" conf="default" url="lib" />
+    <artifact name="testFramework" ext="jar" conf="default" url="lib" />
+    <artifact name="groovy" ext="jar" conf="default" url="lib" />
+    <artifact name="annotations" ext="jar" conf="default" url="lib" />
+    <artifact name="idea_rt" ext="jar" conf="default" url="lib" />
+    <artifact name="bouncy-castle" ext="jar" conf="default" url="lib" />
+    <artifact name="platform-loader" ext="jar" conf="default" url="lib" />
+    <artifact name="junit4" ext="jar" conf="default" url="lib" />
+    <artifact name="trove" ext="jar" conf="default" url="lib" />
+    <artifact name="protobuf" ext="jar" conf="default" url="lib" />
+    <artifact name="nio-fs" ext="jar" conf="default" url="lib" />
+    <artifact name="external-system-rt" ext="jar" conf="default" url="lib" />
+    <artifact name="rd" ext="jar" conf="default" url="lib" />
+    <artifact name="intellij-test-discovery" ext="jar" conf="default" url="lib" />
+    <artifact name="lib" ext="jar" conf="default" url="lib" />
+    <artifact name="resources" ext="jar" conf="default" url="lib" />
+    <artifact name="jps-model" ext="jar" conf="default" url="lib" />
+    <artifact name="stats" ext="jar" conf="default" url="lib" />
+    <artifact name="opentelemetry" ext="jar" conf="default" url="lib" />
+    <artifact name="util-8" ext="jar" conf="default" url="lib" />
+    <artifact name="forms_rt" ext="jar" conf="default" url="lib" />
+    <artifact name="externalProcess-rt" ext="jar" conf="default" url="lib" />
+    <artifact name="util" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies />
+</ivy-module>

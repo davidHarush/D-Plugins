@@ -1,0 +1,14 @@
+<idea-plugin>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.androidstudio</depends>
+  <depends>org.jetbrains.android</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow
+        id="App Logs"
+        anchor="right"
+        factoryClass="com.d.h.plugins.applogs.ui.AppLogsToolWindowFactory"
+        canCloseContents="false"/>
+    <postStartupActivity implementation="com.d.h.plugins.applogs.startup.AppLogsProjectStartupActivity"/>
+  </extensions>
+</idea-plugin>
