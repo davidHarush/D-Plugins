@@ -9,6 +9,7 @@ import com.d.h.plugins.applogs.service.APP_SCREENSHOTS_STATE_TOPIC
 import com.d.h.plugins.applogs.service.AppLogsStateListener
 import com.d.h.plugins.applogs.service.AppScreenshotsManager
 import com.d.h.plugins.applogs.service.AppScreenshotsStateListener
+import com.d.h.plugins.applogs.service.CopilotSkillManager
 import com.d.h.plugins.applogs.service.LogSessionManager
 import com.intellij.icons.AllIcons
 import com.intellij.openapi.Disposable
@@ -51,6 +52,7 @@ class AppLogsToolWindowPanel(
 ) : JPanel(BorderLayout(0, 12)), Disposable {
     private val logSessionManager = project.service<LogSessionManager>()
     private val screenshotsManager = project.service<AppScreenshotsManager>()
+    private val copilotSkillManager = project.service<CopilotSkillManager>()
     private val uiOrientation = ComponentOrientation.getOrientation(Locale.getDefault())
 
     private val statusBadge = JBLabel()
@@ -61,6 +63,9 @@ class AppLogsToolWindowPanel(
     private val sessionsSummaryLabel = JBLabel()
     private val openFolderButton = JButton("Open Folder", AllIcons.Nodes.Folder)
     private val deleteLogsButton = JButton("Delete Logs", AllIcons.Actions.GC)
+
+    private val skillInstallButton = JButton("Install Copilot Skill", AllIcons.Vcs.Branch)
+    private val skillStatusBadge = JBLabel()
 
     private val screenshotsStatusBadge = JBLabel()
     private val screenshotsStatusMessageLabel = JBLabel()
@@ -87,6 +92,7 @@ class AppLogsToolWindowPanel(
         applyLogSnapshot(logSessionManager.snapshot())
         applyScreenshotSnapshot(screenshotsManager.snapshot())
         screenshotsManager.refreshDevices()
+        updateSkillPresentation()
     }
 
     override fun dispose() = Unit
@@ -122,6 +128,11 @@ class AppLogsToolWindowPanel(
             if (confirmation == Messages.YES) {
                 logSessionManager.deleteAllLogs()
             }
+        }
+
+        skillInstallButton.addActionListener {
+            copilotSkillManager.installSkill()
+            updateSkillPresentation()
         }
 
         screenshotDeviceComboBox.addActionListener {
@@ -283,6 +294,16 @@ class AppLogsToolWindowPanel(
             add(deleteLogsButton)
         }
 
+        val skillRow = JPanel(BorderLayout(12, 0)).apply {
+            isOpaque = false
+            val skillLabel = JBLabel("GitHub Copilot Skill").apply {
+                font = font.deriveFont(Font.BOLD)
+                horizontalAlignment = SwingConstants.LEADING
+            }
+            add(skillLabel, BorderLayout.CENTER)
+            add(buildSkillActionWidget(), BorderLayout.LINE_END)
+        }
+
         val contentPanel = JPanel().apply {
             isOpaque = false
             border = JBUI.Borders.empty(12)
@@ -294,9 +315,26 @@ class AppLogsToolWindowPanel(
             add(fullWidthRow(recordRow))
             add(Box.createVerticalStrut(JBUI.scale(10)))
             add(fullWidthRow(actionsPanel))
+            add(Box.createVerticalStrut(JBUI.scale(10)))
+            add(fullWidthRow(skillRow))
         }
 
         return buildCard(contentPanel)
+    }
+
+    private fun buildSkillActionWidget(): JPanel = JPanel(BorderLayout()).apply {
+        isOpaque = false
+        add(skillInstallButton, BorderLayout.WEST)
+        add(skillStatusBadge, BorderLayout.EAST)
+    }
+
+    private fun updateSkillPresentation() {
+        val installed = copilotSkillManager.isSkillInstalled()
+        skillInstallButton.isVisible = !installed
+        skillStatusBadge.isVisible = installed
+        if (installed) {
+            updatePill(skillStatusBadge, "✓ Installed", successColor)
+        }
     }
 
     private fun buildScreenshotsCard(): JPanel {

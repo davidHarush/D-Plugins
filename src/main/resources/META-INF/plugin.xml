@@ -4,6 +4,7 @@
   <depends>org.jetbrains.android</depends>
 
   <extensions defaultExtensionNs="com.intellij">
+    <projectService serviceImplementation="com.d.h.plugins.applogs.service.CopilotSkillManager"/>
     <toolWindow
         id="App Logs"
         anchor="right"
