@@ -54,9 +54,14 @@ Take a screenshot from any connected Android device directly from Android Studio
 
 ## Installation
 
-1. Go to **Settings → Plugins → ⚙️ → Install Plugin from Disk…**
-2. Select `build/distributions/D-plugins-<version>.zip`
-3. Restart Android Studio
+### ⬇️ Download
+
+**[Download D-plugins-1.0.5.zip](https://github.com/davidHarush/D-Plugin/raw/main/build/distributions/D-plugins-1.0.5.zip)**
+
+1. Download the ZIP file above
+2. Go to **Settings → Plugins → ⚙️ → Install Plugin from Disk…**
+3. Select the downloaded `D-plugins-1.0.5.zip`
+4. Restart Android Studio
 
 ---
 
@@ -67,40 +72,3 @@ Take a screenshot from any connected Android device directly from Android Studio
 ```
 
 Output: `build/distributions/D-plugins-<version>.zip`
-
-
-Take a screenshot from any connected Android device directly from Android Studio.
-
-**Why you'll love it:**
-- 📱 Detects connected devices automatically
-- 💾 Saves to any folder you choose — remembered across projects
-- 🏷 Files are named by device and timestamp, so they stay organized
-- 🗑 Clean up all captured screenshots in one click
-
-> Open the **App Logs** panel → choose a folder → hit **Capture Screenshot**.
-
----
-
-## Compatibility
-
-- **Android Studio** Ladybug 2024.2 and later
-- **Plugin version** 1.0.5
-
----
-
-## Installation
-
-1. Go to **Settings → Plugins → ⚙️ → Install Plugin from Disk…**
-2. Select `build/distributions/D-plugins-<version>.zip`
-3. Restart Android Studio
-
----
-
-## Build From Source
-
-```bash
-./gradlew buildPlugin
-```
-
-Output: `build/distributions/D-plugins-<version>.zip`
-
